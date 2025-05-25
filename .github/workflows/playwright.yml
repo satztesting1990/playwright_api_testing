@@ -1,4 +1,5 @@
-name: Playwright Tests
+name: Run Playwright Tests and Email Report
+
 on:
   workflow_dispatch:
   schedule:
@@ -10,7 +11,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #windows-latest #macos-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -28,3 +29,20 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+
+    - name: Zip HTML Report
+      run: |
+          zip -r report.zip playwright-report
+
+    - name: Send Email with Report
+      uses: dawidd6/action-send-mail@v3
+      with:
+          server_address: smtp.your-email-provider.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: Playwright Test Report
+          to: satz.syk@gmail.com
+          from: GitHub CI <your-email@example.com>
+          body: Playwright test run completed. See attached report.
+          attachments: report.zip

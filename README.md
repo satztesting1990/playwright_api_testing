@@ -22,6 +22,7 @@ The test cases in `apiTest.test.ts` cover:
 - **CRUD Operations**: Testing Create, Read, Update, Delete operations across various resources.
 - **Edge Cases**: Handling unexpected input, missing fields, invalid routes, etc.
 - **Timeouts & Failures**: Verifying API robustness under failure conditions.
+- **Request Chaining** is followed to make use of a request from a api call as a request to another api call.
 
 ## ⚙️ Technologies Used
 
@@ -62,14 +63,13 @@ Example CI tools supported:
 - Azure DevOps
 - Zenkins
 ### sample GitHub Action snippet:
-<!-- --yaml
+--yaml
 - name: Install dependencies
   run: npm ci
 
 - name: Run tests
   run: npx playwright test
-                     -->
-
+                    
 ### 6. Contribution Guide
 - Fork the repository.
 - Create a new branch: feature/your-test-name.
