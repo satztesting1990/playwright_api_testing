@@ -39,8 +39,8 @@ jobs:
       with:
           server_address: smtp.your-email-provider.com
           server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
+          username: 'satztesting1990@gmail.com'
+          password: 'SatzTesting@123'
           subject: Playwright Test Report
           to: satz.syk@gmail.com
           from: GitHub CI <your-email@example.com>
