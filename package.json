@@ -1,0 +1,22 @@
+{
+  "name": "playwright_api_testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satztesting1990/playwright_api_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/satztesting1990/playwright_api_testing/issues"
+  },
+  "homepage": "https://github.com/satztesting1990/playwright_api_testing#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.21"
+  }
+}

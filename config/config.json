@@ -1,0 +1,34 @@
+{
+    "apiUrl": "https://restful-booker.herokuapp.com/booking/",
+    "tokenUrl": "https://restful-booker.herokuapp.com/auth",
+    "requestBody": {
+        "firstname": "{0}",
+        "lastname": "{1}",
+        "totalprice": 1000,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2025-07-01",
+            "checkout": "2025-07-05"
+        },
+        "additionalneeds": "{2}"
+    },
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "tokenbody": {
+        "username": "admin",
+        "password": "password123"
+    },
+    "putHeader": {
+        "Content-Type": "application/json",
+        "Cookie": "token={0}"
+    },
+    "patchBody": {
+        "firstname": "{0}",
+        "lastname": "{1}",
+        "additionalneeds": "{2}"
+    },
+        "invalidHeaders": {
+        "ContentType": "application/json"
+    }
+}
