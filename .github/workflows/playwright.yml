@@ -37,12 +37,18 @@ jobs:
     - name: Send Email with Report
       uses: dawidd6/action-send-mail@v3
       with:
-          server_address: smtp.your-email-provider.com
+          server_address: smtp.gmail.com
           server_port: 587
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: Playwright Test Report
-          to: 'satz.syk@gmail.com'
-          from: GitHub CI <your-email@example.com>
-          body: Playwright test run completed. See attached report.
+          to: Satz.syk@gmail.com
+          from: Satz Testing <satztesting1990@gmail.com>
+          body: |
+            Hello,
+
+              The Playwright test run has completed. Please find the attached report.
+
+            Regards,
+            GitHub CI
           attachments: report.zip
