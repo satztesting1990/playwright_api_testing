@@ -1,6 +1,8 @@
 name: Playwright Tests
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '45 13 * * '
   push:
     branches: [ main, master ]
   pull_request:
