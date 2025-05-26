@@ -34,21 +34,21 @@ jobs:
       run: |
           zip -r report.zip playwright-report
 
-    - name: Send Email with Report
-      uses: dawidd6/action-send-mail@v3
-      with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: Playwright Test Report
-          to: Satz.syk@gmail.com
-          from: Satz Testing <satztesting1990@gmail.com>
-          body: |
-            Hello,
+    # - name: Send Email with Report
+    #   uses: dawidd6/action-send-mail@v3
+    #   with:
+    #       server_address: smtp.gmail.com
+    #       server_port: 587
+    #       username: ${{ secrets.EMAIL_USERNAME }}
+    #       password: ${{ secrets.EMAIL_PASSWORD }}
+    #       subject: Playwright Test Report
+    #       to: Satz.syk@gmail.com
+    #       from: Satz Testing <satztesting1990@gmail.com>
+    #       body: |
+    #         Hello,
 
-              The Playwright test run has completed. Please find the attached report.
+    #           The Playwright test run has completed. Please find the attached report.
 
-            Regards,
-            GitHub CI
-          attachments: report.zip
+    #         Regards,
+    #         GitHub CI
+    #       attachments: report.zip
